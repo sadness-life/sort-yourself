@@ -1,6 +1,25 @@
 'use strict'
 
-function bubbleSort(items) {}
+function bubbleSort(items) {
+  var temp;
+  //kapan berhentinya? sampai dengan array sudah habis
+  for(var i = 0; i<items.length; i++){
+    //melakukan pencarian angka terbesar, dibandingkan dengan sebelahnya
+    // dan di geser sampai shift ke akhir
+    for(var j = 0; j<items.length-1; j++){
+      if(items[j]>items[j+1]){
+        //swap
+        console.log(j)
+        temp = items[j];
+        items[j] = items[j+1];
+        items[j+1] = temp;
+        temp ="";
+      }
+    }
+  }
+  return items;
+
+}
 
 
 // Driver code
@@ -25,7 +44,7 @@ function sort_from_file(filename) {
 
     console.log(filename)
     console.log("--------")
-    console.log(bubbleSort2(items))
+    console.log(bubbleSort(items))
 
   })
 }
