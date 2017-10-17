@@ -1,7 +1,22 @@
 'use strict'
 
-function selectionSort(arrays){
+function selectionSort(arrays) {
+  let arr = [];
+  let index;
+  while (arrays.length > 0) {
+    let min = arrays[0]
+    for (let i = 1; i < arrays.length; i++) {
+      if (arrays[i] < min) {
+        min = arrays[i]
+      }
+    }
+    index = arrays.indexOf(min);
+    arr.push(min)
+    arrays.splice(index, 1)
+  }
+  return arr;
 }
+
 
 // Driver code
 function main() {
